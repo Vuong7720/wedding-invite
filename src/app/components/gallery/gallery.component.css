@@ -1,0 +1,102 @@
+.wedding-slider {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Swiper luôn nằm phía sau chữ */
+swiper-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  --swiper-navigation-color: white;
+  --swiper-pagination-color: white;
+}
+
+.anh_cuoi_slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85);
+  transition: transform 1.5s ease-in-out;
+}
+
+/* chữ cố định nằm trên cùng */
+.overlay {
+  /* Giữ nguyên vị trí ban đầu */
+  position: relative;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  width: 50%;
+  /* Giảm đổ bóng để chữ mềm hơn (như ảnh 1) */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4); 
+}
+
+.corner-flourish {
+  position: absolute;
+  width: 150px; /* Điều chỉnh kích thước theo ý muốn */
+  height: auto;
+}
+
+.corner-flourish.top-left {
+  top: 0;
+  left: 0;
+  transform: scale(1); /* Nếu bạn cần xoay hoặc lật */
+}
+
+.overlay h3 {
+  /* Font chữ phụ */
+  font-size: 1.5rem; /* Nhỏ hơn ảnh 2 */
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.15rem; /* Thêm giãn chữ để thanh lịch hơn */
+  /* Thay đổi font tại đây */
+  font-family: 'Montserrat', sans-serif; /* Dùng font Sans-serif */
+}
+
+.overlay h1 {
+  /* Font chữ chính - Tên cô dâu chú rể */
+  font-size: 3.5rem; /* To hơn ảnh 2 */
+  margin-bottom: 2rem; /* Tăng khoảng cách dưới */
+  font-weight: normal; /* Chữ script thường không cần font-weight đậm */
+  /* Thay đổi font tại đây */
+  font-family: 'Dancing Script', cursive; /* Dùng font Script */
+}
+
+.save-date {
+  /* Đổi màu nền đỏ tươi hơn giống ảnh 1 */
+  background: #d63031; 
+  color: white;
+  /* Tăng padding để nút to hơn và hình vuông hơn */
+  padding: 1rem 1rem; 
+  /* Giảm bo góc để nút sắc nét hơn */
+  border-radius: 0.3rem; 
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.2; /* Tăng line-height cho chữ tách dòng */
+  font-size: 1.1rem; /* Kích thước chữ bên trong nút */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Thêm đổ bóng nổi bật */
+}
+
+/* mây */
+
+
+/* responsive */
+@media (max-width: 768px) {
+  .overlay h1 {
+    font-size: 2rem;
+  }
+  .overlay h3 {
+    font-size: 1.2rem;
+  }
+  .save-date {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
