@@ -27,28 +27,36 @@ swiper-container {
 /* chữ cố định nằm trên cùng */
 .overlay {
   /* Giữ nguyên vị trí ban đầu */
-  position: relative;
+  position: relative; /* Rất quan trọng */
   z-index: 2;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
   text-align: center;
-  width: 50%;
-  /* Giảm đổ bóng để chữ mềm hơn (như ảnh 1) */
+  /* width: 50%;  */
+  max-width: 1200px; /* Giới hạn tối đa */
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4); 
 }
 
 .corner-flourish {
   position: absolute;
-  width: 150px; /* Điều chỉnh kích thước theo ý muốn */
+  width: 150px; /* Kích thước chung */
   height: auto;
+  z-index: -1; /* Đảm bảo nó nằm dưới chữ */
 }
 
+/* VIỀN GÓC TRÊN BÊN TRÁI */
 .corner-flourish.top-left {
-  top: 0;
-  left: 0;
-  transform: scale(1); /* Nếu bạn cần xoay hoặc lật */
+  top: -10px; /* Đẩy ra ngoài rìa trên */
+  left: 250px; /* Đẩy ra ngoài rìa trái */
+  transform: scaleX(1) scaleY(1); /* Giữ nguyên hoặc xoay 180 độ tùy hình gốc */
+}
+
+/* VIỀN GÓC DƯỚI BÊN PHẢI */
+.corner-flourish.bottom-right {
+  bottom: -10px; /* Đẩy ra ngoài rìa dưới */
+  right: 250px; /* Đẩy ra ngoài rìa phải */
 }
 
 .overlay h3 {
@@ -84,8 +92,6 @@ swiper-container {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Thêm đổ bóng nổi bật */
 }
 
-/* mây */
-
 
 /* responsive */
 @media (max-width: 768px) {
@@ -99,4 +105,41 @@ swiper-container {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
   }
+
+  .corner-flourish {
+        display: none; /* Ẩn viền trang trí trên điện thoại để tránh rối */
+    }
+
+}
+
+
+@media (max-width: 600px) {
+    .overlay h3 {
+        font-size: 1.2rem; /* Giảm kích thước font phụ */
+    }
+
+    .overlay h1 {
+        font-size: 2.2rem; /* Giảm kích thước font tên */
+        line-height: 1.2;
+    }
+
+    .save-date {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem; /* Giảm kích thước nút */
+    }
+
+    /* Nếu 25vw vẫn quá lớn trên điện thoại, giảm tiếp kích thước viền */
+    .corner-flourish {
+        display: none; /* Ẩn viền trang trí trên điện thoại để tránh rối */
+    }
+
+}
+
+/* Media Query: Chỉ áp dụng khi màn hình nhỏ hơn 768px (điện thoại và máy tính bảng nhỏ) */
+@media (max-width: 768px) {
+    /* Ẩn mũi tên chuyển slide */
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: none !important; /* Dùng !important để đảm bảo ghi đè */
+    }
 }

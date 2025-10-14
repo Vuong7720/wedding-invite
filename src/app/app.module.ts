@@ -6,17 +6,25 @@ import { AppComponent } from './app.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { CoupleComponent } from './components/couple/couple.component';
+import { WishFormComponent } from './components/wish-form/wish-form.component';
+import { FormsModule } from '@angular/forms';
+import { StoryComponent } from './components/story/story.component';
+import { ParticleEffectComponent } from './shared/particle-effect/particle-effect.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroComponent,
     GalleryComponent,
-    CoupleComponent
+    CoupleComponent,
+    WishFormComponent,
+    StoryComponent,
+    ParticleEffectComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule  
   ],
   providers: [],
   bootstrap: [AppComponent],
