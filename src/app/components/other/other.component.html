@@ -1,0 +1,81 @@
+<section class="flex flex-col items-center justify-center relative p-4" style="background-color: #fcebeb;">
+    
+    <div class="absolute top-4 left-4 text-pink-400 text-3xl hidden sm:block">
+        <i class="fa-solid fa-ring"></i>
+    </div>
+    <div class="absolute bottom-4 right-4 text-red-500 text-3xl hidden sm:block">
+        <i class="fa-solid fa-heart"></i>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-4">
+
+        <button class="flex items-center justify-center p-4 border-2 border-red-400 rounded-lg text-red-500 hover:bg-red-50 hover:text-red-600 transition-colors duration-200 w-48 h-20">
+            <i class="fa-regular fa-comment-dots text-xl mr-2"></i>
+            <span class="text-base font-semibold">GỬI LỜI CHÚC</span>
+        </button>
+        <button 
+            (click)="openModal()"
+            class="flex items-center justify-center p-4 border-2 border-red-400 rounded-lg text-red-500 hover:bg-red-50 hover:text-red-600 transition-colors duration-200 w-48 h-20 cursor-pointer">
+            <i class="fa-solid fa-gift text-xl mr-2"></i>
+            <span class="text-base font-semibold">MỪNG CƯỚI</span>
+        </button>
+    </div>
+</section>
+
+<div *ngIf="isModalVisible" 
+     (click)="closeModalOnBackdropClick($event)"
+     class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    
+    <div class="bg-white p-6 rounded-lg shadow-2xl max-w-xs w-full relative transform transition-all duration-300 scale-100">
+        
+        <button 
+            (click)="closeModal()"
+            class="absolute top-2 right-2 text-gray-400 hover:text-red-500 text-2xl font-bold p-1 leading-none cursor-pointer">
+            &times;
+        </button>
+        
+        <h2 class="text-center text-2xl font-serif font-bold text-red-500 mb-4 border-b pb-2 border-pink-100">Gửi Lời Chúc Mừng</h2>
+        
+        
+        <div *ngIf="isSelectionPhase" class="flex flex-col items-center space-y-4 pt-4">
+            <p class="text-center text-gray-600 font-medium">Bạn muốn gửi lời chúc đến:</p>
+            
+            <button 
+                (click)="showQr('groom')"
+                class="w-full py-3 border-2 border-red-400 rounded-lg bg-red-50 text-red-600 font-semibold hover:bg-red-100 transition-colors">
+                <i class="fa-solid fa-male mr-2"></i> NHÀ TRAI (Ngọc Thái)
+            </button>
+            
+            <button 
+                (click)="showQr('bride')"
+                class="w-full py-3 border-2 border-pink-400 rounded-lg bg-pink-50 text-pink-600 font-semibold hover:bg-pink-100 transition-colors">
+                <i class="fa-solid fa-female mr-2"></i> NHÀ GÁI (Kim Ngân)
+            </button>
+        </div>
+
+
+        <div *ngIf="!isSelectionPhase && currentQrInfo" class="text-center pt-2">
+            
+            <button 
+                (click)="backToSelection()"
+                class="absolute top-2 left-2 text-red-500 hover:text-red-700 text-sm font-semibold flex items-center">
+                <i class="fa-solid fa-arrow-left text-sm mr-1"></i> Quay lại
+            </button>
+
+            <p class="text-sm text-gray-600 mb-3">Quét mã QR để chuyển khoản. Xin chân thành cảm ơn!</p>
+            
+            <div class="flex justify-center mb-4">
+                <img [src]="currentQrInfo.qrUrl" 
+                     [alt]="'QR Code ' + currentQrInfo.accountName" 
+                     class="w-64 h-64 border-4 border-red-100 p-2 shadow-md">
+            </div>
+
+            <div class="text-sm text-gray-700 space-y-1">
+                <p>Ngân hàng: **{{ currentQrInfo.bank }}**</p>
+                <p>Số tài khoản: **{{ currentQrInfo.accountNumber }}**</p>
+                <p>Chủ tài khoản: **{{ currentQrInfo.accountName }}**</p>
+                <p class="mt-2 text-xs text-red-400 italic">{{ currentQrInfo.note }}</p>
+            </div>
+        </div>
+    </div>
+</div>

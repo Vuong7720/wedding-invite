@@ -10,6 +10,8 @@ import { WishFormComponent } from './components/wish-form/wish-form.component';
 import { FormsModule } from '@angular/forms';
 import { StoryComponent } from './components/story/story.component';
 import { ParticleEffectComponent } from './shared/particle-effect/particle-effect.component';
+import { OtherComponent } from './components/other/other.component';
+import { MusicPlayerComponent } from './music-player.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ParticleEffectComponent } from './shared/particle-effect/particle-effec
     CoupleComponent,
     WishFormComponent,
     StoryComponent,
-    ParticleEffectComponent
+    ParticleEffectComponent,
+    OtherComponent,
+    MusicPlayerComponent
   ],
   imports: [
     BrowserModule,
