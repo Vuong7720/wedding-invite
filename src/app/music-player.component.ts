@@ -47,4 +47,6 @@ export class MusicPlayerComponent implements AfterViewInit {
       });
     }
   }
+
+  
 }

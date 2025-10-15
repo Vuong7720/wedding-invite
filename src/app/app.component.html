@@ -1,10 +1,23 @@
-<app-particle-effect></app-particle-effect>
-<app-gallery></app-gallery>
-<app-couple></app-couple>
-<app-other></app-other>
-<app-story></app-story>
-<app-hero></app-hero>
-<app-wish-form></app-wish-form>
+<div *ngIf="!isAppReady" class="fixed inset-0 bg-white flex flex-col items-center justify-center z-[9999]"
+  style="background-color: #fcebeb;">
+  <h1 class="text-3xl font-['Dancing_Script'] text-red-500 mb-6 animate-pulse">Ngọc Thái & Kim Ngân</h1>
+  <p class="text-gray-600 mb-8">Chúng tôi đang chờ bạn...</p>
+
+  <button (click)="enterWebsite()"
+    class="px-8 py-3 bg-red-500 text-white font-bold rounded-full shadow-lg hover:bg-red-600 transition-all duration-300 transform hover:scale-105">
+    <i class="fa-solid fa-heart mr-2"></i> NHẤN ĐỂ VÀO ĐÁM CƯỚI <i class="fa-solid fa-heart ml-2"></i>
+  </button>
+</div>
+
+<div *ngIf="isAppReady">
+  <app-particle-effect></app-particle-effect>
+  <app-gallery></app-gallery>
+  <app-couple></app-couple>
+  <app-other></app-other>
+  <app-story></app-story>
+  <app-hero></app-hero>
+  <app-wish-form></app-wish-form>
 
 
-<app-music-player></app-music-player> 
+  <app-music-player></app-music-player>
+</div>
