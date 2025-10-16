@@ -1,12 +1,36 @@
-<div *ngIf="!isAppReady" class="fixed inset-0 bg-white flex flex-col items-center justify-center z-[9999]"
-  style="background-color: #fcebeb;">
-  <h1 class="text-3xl font-['Dancing_Script'] text-red-500 mb-6 animate-pulse">Ngọc Thái & Kim Ngân</h1>
-  <p class="text-gray-600 mb-8">Chúng tôi đang chờ bạn...</p>
+<div *ngIf="!isAppReady" 
+     class="fixed inset-0 flex flex-col items-center justify-center z-[9999] transition-opacity duration-1000 overflow-hidden" 
+     style="background-color: #fcebeb;"
+     [style.opacity]="splashScreenOpacity">
+     
+    <div class="absolute top-0 left-0 text-red-300 text-6xl opacity-70 transform rotate-12 -translate-x-1/2 -translate-y-1/2 hidden sm:block">
+        <i class="fa-solid fa-ring"></i>
+    </div>
+    
+    <div class="absolute bottom-0 right-0 text-pink-400 text-6xl opacity-70 transform -rotate-12 translate-x-1/2 translate-y-1/2 hidden sm:block">
+        <i class="fa-solid fa-heart-pulse"></i>
+    </div>
+    
+    <div class="mb-8 w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-xl animate-bounce-slow">
+        <img src="assets/images/w1.jpg" alt="Ngọc Thái & Kim Ngân" class="w-full h-full object-cover">
+    </div>
 
-  <button (click)="enterWebsite()"
-    class="px-8 py-3 bg-red-500 text-white font-bold rounded-full shadow-lg hover:bg-red-600 transition-all duration-300 transform hover:scale-105">
-    <i class="fa-solid fa-heart mr-2"></i> NHẤN ĐỂ VÀO ĐÁM CƯỚI <i class="fa-solid fa-heart ml-2"></i>
-  </button>
+    <h1 class="text-4xl sm:text-5xl font-['Dancing_Script'] text-red-600 mb-4 tracking-wider animate-fade-in">
+        Ngọc Thái & Kim Ngân
+    </h1>
+    
+    <p class="text-lg text-gray-700 mb-10 italic">
+        Chúng tôi đang chờ bạn...
+    </p>
+
+    <button 
+        (click)="enterWebsite()"
+        class="w-4/5 md:w-auto px-6 sm:px-10 py-4 
+               bg-red-500 text-white font-extrabold text-lg uppercase 
+               rounded-full shadow-2xl transition-all duration-300 
+               transform hover:scale-110 hover:bg-red-600 focus:outline-none">
+        <i class="fa-solid fa-heart mr-2 animate-beat"></i>MỞ THIỆP MỜI <i class="fa-solid fa-heart ml-2 animate-beat"></i>
+    </button>
 </div>
 
 <div *ngIf="isAppReady">
@@ -15,8 +39,11 @@
   <app-couple></app-couple>
   <app-other></app-other>
   <app-story></app-story>
+  <app-countdown></app-countdown>
   <app-hero></app-hero>
-  <app-wish-form></app-wish-form>
+  <app-albums></app-albums>
+  <app-thank-you></app-thank-you>
+  <!-- <app-wish-form></app-wish-form> -->
 
 
   <app-music-player></app-music-player>

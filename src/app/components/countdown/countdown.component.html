@@ -1,0 +1,36 @@
+<section class="flex flex-col items-center justify-center py-10 bg-pink-50/50">
+  <h2 class="text-3xl font-serif text-red-500 mb-8">
+    <i class="fa-solid fa-clock mr-2"></i> The Big Day <i class="fa-solid fa-calendar-alt ml-2"></i>
+  </h2>
+
+  <div class="flex space-x-4 sm:space-x-8">
+    
+    <div class="flex flex-col items-center">
+      <div class="w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center rounded-full border-4 border-red-400 bg-white shadow-lg text-red-500 font-extrabold text-3xl">
+        {{ days }}
+      </div>
+      <span class="mt-2 text-sm sm:text-base text-gray-700">Ngày</span>
+    </div>
+    
+    <div class="flex flex-col items-center">
+      <div class="w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center rounded-full border-4 border-red-400 bg-white shadow-lg text-red-500 font-extrabold text-3xl">
+        {{ hours }}
+      </div>
+      <span class="mt-2 text-sm sm:text-base text-gray-700">Giờ</span>
+    </div>
+    
+    <div class="flex flex-col items-center">
+      <div class="w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center rounded-full border-4 border-red-400 bg-white shadow-lg text-red-500 font-extrabold text-3xl">
+        {{ minutes }}
+      </div>
+      <span class="mt-2 text-sm sm:text-base text-gray-700">Phút</span>
+    </div>
+    
+    <div class="flex flex-col items-center">
+      <div class="w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center rounded-full border-4 border-red-400 bg-white shadow-lg text-red-500 font-extrabold text-3xl animate-pulse">
+        {{ seconds }}
+      </div>
+      <span class="mt-2 text-sm sm:text-base text-gray-700">Giây</span>
+    </div>
+  </div>
+</section>

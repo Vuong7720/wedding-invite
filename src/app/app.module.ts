@@ -12,6 +12,10 @@ import { StoryComponent } from './components/story/story.component';
 import { ParticleEffectComponent } from './shared/particle-effect/particle-effect.component';
 import { OtherComponent } from './components/other/other.component';
 import { MusicPlayerComponent } from './music-player.component';
+import { CountdownComponent } from './components/countdown/countdown.component';
+import { AlbumsComponent } from './components/albums/albums.component';
+import { LightboxModalComponent } from './components/lightbox-modal/lightbox-modal.component';
+import { ThankYouComponent } from './components/thank-you/thank-you.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,11 @@ import { MusicPlayerComponent } from './music-player.component';
     StoryComponent,
     ParticleEffectComponent,
     OtherComponent,
-    MusicPlayerComponent
+    MusicPlayerComponent,
+    CountdownComponent,
+    AlbumsComponent,
+    LightboxModalComponent,
+    ThankYouComponent
   ],
   imports: [
     BrowserModule,

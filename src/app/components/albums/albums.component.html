@@ -1,0 +1,40 @@
+<section class="py-12 md:py-16" style="background-color: #fcebeb;">
+    
+    <div class="text-center mb-10">
+        <h2 class="text-4xl font-['Dancing_Script'] text-red-500 mb-2">
+            Album Ảnh Cưới
+        </h2>
+        <p class="text-gray-600 italic">
+            "Và từ đây, chúng ta về chung một nhà..."
+        </p>
+    </div>
+
+    <div class="container mx-auto px-4">
+        
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            
+            <div *ngFor="let photo of photos" 
+                 (click)="openLightbox(photo.url)"
+                 class="relative overflow-hidden rounded-lg shadow-xl group cursor-pointer transition-all duration-300 transform hover:scale-[1.02]">
+                
+                <div class="aspect-square w-full">
+                    <img [src]="photo.url" 
+                         [alt]="photo.description"
+                         loading="lazy"
+                         class="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-80">
+                </div>
+
+                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i class="fa-solid fa-expand text-white text-3xl"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<app-lightbox-modal 
+  [visible]="isModalVisible" 
+  [photoUrl]="selectedPhotoUrl" 
+  (closeEvent)="closeLightbox()">
+</app-lightbox-modal>

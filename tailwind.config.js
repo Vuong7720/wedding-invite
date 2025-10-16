@@ -23,6 +23,21 @@ module.exports = {
         montserrat: ['"Montserrat"', 'sans-serif'],
         comic: ['"Comic Neue"', 'cursive'],
       },
+      animation: {
+        'bounce-slow': 'bounce 2s infinite', // Nhảy chậm
+        'beat': 'beat 1s infinite alternate', // Tim đập
+        'fade-in': 'fadeIn 1s ease-out',
+      },
+      keyframes: {
+        'beat': {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.1)' },
+        },
+        'fadeIn': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        }
+      }
     },
   },
   plugins: [],
