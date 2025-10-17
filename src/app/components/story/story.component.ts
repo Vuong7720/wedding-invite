@@ -21,34 +21,10 @@ stories = [
     },
     // Thêm 5 câu chuyện còn lại (story-3 đến story-7)
     {
-      title: 'Câu Chuyện Thứ 3',
-      date: 'Ngày/tháng/năm',
-      content: 'Nội dung câu chuyện thứ 3...',
+      title: 'Cùng nhay đi đến những chân trời mới',
+      date: 'October 22, 2022',
+      content: 'Cùng nhau đi du lịch, khám phá những vùng đất mới, chân trời tình yêu của chúng ta thêm gắn bó...',
       imageUrl: 'assets/images/hangout3.jpg',
-    },
-    {
-      title: 'Câu Chuyện Thứ 3',
-      date: 'Ngày/tháng/năm',
-      content: 'Nội dung câu chuyện thứ 3...',
-      imageUrl: 'assets/images/hangout4.jpg',
-    },
-    {
-      title: 'Câu Chuyện Thứ 3',
-      date: 'Ngày/tháng/năm',
-      content: 'Nội dung câu chuyện thứ 3...',
-      imageUrl: 'assets/images/hangout5.jpg',
-    },
-    {
-      title: 'Câu Chuyện Thứ 3',
-      date: 'Ngày/tháng/năm',
-      content: 'Nội dung câu chuyện thứ 3...',
-      imageUrl: 'assets/images/hangout6.png',
-    },
-    {
-      title: 'Câu Chuyện Thứ 3',
-      date: 'Ngày/tháng/năm',
-      content: 'Nội dung câu chuyện thứ 3...',
-      imageUrl: 'assets/images/hangout7.jpg',
     },
   ];
 }

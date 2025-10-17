@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParticleEffectComponent implements OnInit {
   // Mảng chứa số lượng hạt (particles) bạn muốn tạo
-  particleCount = 20; 
+  particleCount = 15; 
   particles: { id: number; delay: number; duration: number }[] = [];
 
   ngOnInit() {
