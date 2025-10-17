@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./hero.component.css']
 })
 export class HeroComponent {
-backgroundImageUrl: string = '/assets/image_weding/wd_ud1.jpg';
+backgroundImageUrl: string = 'assets/image_weding/wd_ud1.jpg';
 }
