@@ -16,6 +16,7 @@ import { CountdownComponent } from './components/countdown/countdown.component';
 import { AlbumsComponent } from './components/albums/albums.component';
 import { LightboxModalComponent } from './components/lightbox-modal/lightbox-modal.component';
 import { ThankYouComponent } from './components/thank-you/thank-you.component';
+import { WeddingInfoComponentComponent } from './components/wedding-info-component/wedding-info-component.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ThankYouComponent } from './components/thank-you/thank-you.component';
     CountdownComponent,
     AlbumsComponent,
     LightboxModalComponent,
-    ThankYouComponent
+    ThankYouComponent,
+    WeddingInfoComponentComponent
   ],
   imports: [
     BrowserModule,

@@ -1,49 +1,42 @@
-/* Đảm bảo container nằm trên cùng (z-index cao) và không chặn click */
-.fixed {
-  position: fixed;
+/* particle-effect.component.css (Tạo hiệu ứng trong suốt) */
+
+/* Áp dụng filter làm mờ và độ mờ cho tất cả các hạt */
+.particle {
+    bottom: 0;
+    
+    /* Hiệu ứng trong suốt và mềm mại */
+    filter: blur(0.7px); /* Làm mờ nhẹ, tạo cảm giác mờ ảo (blur) */
+    opacity: 0.6;        /* Đặt độ mờ ban đầu thấp (0.6) */
+    
+    /* Kích hoạt chuyển động */
+    animation-name: fly-up;
+    animation-timing-function: ease-in-out; 
+    animation-iteration-count: infinite; 
+    animation-fill-mode: forwards;
 }
 
 /* Định nghĩa hiệu ứng chuyển động bay lên */
 @keyframes fly-up {
   0% {
-    /* Xuất hiện ngẫu nhiên ở phần dưới màn hình và thay đổi vị trí ngang một chút */
-    transform: translateY(0) translateX(0) scale(0.5);
-    opacity: 0;
+    transform: translateY(0) translateX(0) scale(0.3) rotate(0deg); 
+    opacity: 0; /* Bắt đầu hoàn toàn trong suốt */
+    filter: blur(0.5px);
   }
-  20% {
-    /* Đảm bảo chúng xuất hiện sau khi bắt đầu */
-    opacity: 1;
-    transform: translateY(-20vh) translateX(0) scale(1);
+  10% {
+    opacity: 0.6; /* Nhanh chóng đạt đến độ mờ nhất định */
   }
-  80% {
-    /* Thêm một chút dao động ngang (side-to-side wobble) */
-    transform: translateY(-80vh) translateX(5vw) scale(1.1);
-    opacity: 1;
+  50% {
+    transform: translateY(-50vh) translateX(2vw) scale(1) rotate(5deg);
+    opacity: 0.8; /* Đạt độ mờ tối đa (vẫn thấp) khi ở giữa màn hình */
+    filter: blur(0.7px);
+  }
+  90% {
+    transform: translateY(-90vh) translateX(-2vw) scale(1.1) rotate(-5deg);
+    opacity: 0.4; /* Bắt đầu mờ dần */
   }
   100% {
-    /* Bay ra khỏi màn hình ở trên cùng và biến mất */
-    transform: translateY(-100vh) translateX(0) scale(0.8);
-    opacity: 0;
+    transform: translateY(-100vh) translateX(0) scale(0.7) rotate(0deg); 
+    opacity: 0; /* Biến mất hoàn toàn */
+    filter: blur(1.5px); /* Tăng blur khi bay ra khỏi màn hình */
   }
 }
-
-/* Áp dụng animation cho từng hạt */
-.particle {
-  /* Bắt đầu từ dưới cùng */
-  bottom: 0;
-  
-  /* Sử dụng hiệu ứng bay lên */
-  animation-name: fly-up;
-  animation-timing-function: linear;
-  /* Lặp lại vô hạn */
-  animation-iteration-count: infinite; 
-  /* Không giữ lại trạng thái cuối */
-  animation-fill-mode: forwards;
-  
-  /* Lớp ngẫu nhiên hóa vị trí ngang ban đầu */
-  /* Lưu ý: Vị trí ngang (`left:`) đã được đặt ngẫu nhiên trong template */
-}
-
-/* Tùy chỉnh thêm: Ngẫu nhiên hóa vị trí ngang bằng CSS thay vì TS */
-/* Nếu bạn muốn ngẫu nhiên hóa vị trí ngang bằng CSS, bạn có thể xóa style.left.% trong HTML 
-   và dùng translateX trong @keyframes */

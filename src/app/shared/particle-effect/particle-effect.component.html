@@ -1,11 +1,12 @@
 <div class="fixed top-0 left-0 w-full h-full pointer-events-none z-50 overflow-hidden">
   <div 
     *ngFor="let p of particles" 
-    class="particle absolute text-xl"
+    class="particle absolute text-2xl" 
     [style.animationDelay.s]="p.delay"
     [style.animationDuration.s]="p.duration"
     [style.left.%]="p.id * (100 / particleCount)" 
-  >
+    
+    >
     {{ getParticleSymbol(p.id) }}
   </div>
 </div>

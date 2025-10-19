@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParticleEffectComponent implements OnInit {
   // Mảng chứa số lượng hạt (particles) bạn muốn tạo
-  particleCount = 15; 
+  particleCount = 10; 
   particles: { id: number; delay: number; duration: number }[] = [];
 
   ngOnInit() {
@@ -24,8 +24,10 @@ export class ParticleEffectComponent implements OnInit {
 
   // Phương thức trả về biểu tượng ngẫu nhiên (trái tim, bong bóng...)
   getParticleSymbol(id: number): string {
-    const symbols = ['❤️', '🎈', '✨', '💖'];
-    // Dùng id để đảm bảo mỗi hạt có một biểu tượng ngẫu nhiên cố định
+    // Sử dụng các biểu tượng có màu hồng, trắng hoặc nhẹ nhàng
+    const symbols = ['🤍', '💖']; 
+    
+    // Biểu tượng trái tim trắng ('🤍') sẽ làm nền trong suốt dễ dàng hơn
     return symbols[id % symbols.length]; 
-  }
+}
 }
