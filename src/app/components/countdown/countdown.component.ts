@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class CountdownComponent {
 // THAY THẾ NGÀY NÀY BẰNG NGÀY CƯỚI THỰC TẾ CỦA BẠN (Năm, Tháng-1, Ngày, Giờ, Phút)
-  // Ví dụ: 24/11/2025 lúc 10:30 sáng
-  private weddingDate = new Date(2025, 10, 8, 10, 0).getTime(); 
+  // Ví dụ: 11/11/2025 lúc 10:30 sáng
+  private weddingDate = new Date(2025, 10, 11, 10, 0).getTime(); 
   
   // Biến hiển thị
   days: string = '00';

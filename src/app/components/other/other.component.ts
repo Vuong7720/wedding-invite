@@ -33,10 +33,10 @@ export class OtherComponent {
   };
 
   brideQr: QrInfo = {
-    bank: 'Techcombank',
-    accountNumber: '999876543210',
-    accountName: 'Nguyễn Kim Ngân (Nhà Gái)',
-    qrUrl: 'assets/images/qr_nhatrai2.png', 
+    bank: 'MbBank',
+    accountNumber: '0378260537',
+    accountName: 'Nông Kim Ngân (Nhà Gái)',
+    qrUrl: 'assets/image_weding/qr_codau2.jpg', 
     note: 'Chúc mừng cô dâu chú rể!'
   };
 
