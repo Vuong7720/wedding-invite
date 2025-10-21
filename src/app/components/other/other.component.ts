@@ -25,10 +25,10 @@ export class OtherComponent {
 
   // Dữ liệu cho Nhà Trai và Nhà Gái
   groomQr: QrInfo = {
-    bank: 'Vietcombank',
-    accountNumber: '000123456789',
+    bank: 'Vietinbank',
+    accountNumber: '105870669836',
     accountName: 'Hồ Ngọc Thái (Nhà Trai)',
-    qrUrl: 'assets/images/qr_nhatrai2.png', 
+    qrUrl: 'assets/image_weding/qr_chure1.jpg', 
     note: 'Chúc mừng cô dâu chú rể trăm năm hạnh phúc!'
   };
 

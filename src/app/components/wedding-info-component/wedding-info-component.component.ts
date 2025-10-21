@@ -6,23 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./wedding-info-component.component.css']
 })
 export class WeddingInfoComponentComponent {
-// Thông tin Lễ Thành Hôn (Nhà Trai)
   groomEvent = {
-    title: 'LỄ THÀNH HÔN (NHÀ TRAI)',
+    title: 'Lễ Đính Hôn',
     date: 'Thứ Bảy, 08/11/2025',
-    time: '18:00 (6 giờ tối)',
-    locationName: 'Nhà Hàng Tiệc Cưới ABC',
-    address: 'Số 123 Đường XYZ, Quận 1, TP. Hồ Chí Minh',
-    googleMapsLink: 'https://maps.app.goo.gl/ddERYpxLAKxeTzkk7' // Thay thế bằng link thực tế
+    time: '10:00 (10 giờ sáng)',
+    locationName: 'Nhà Hàng Du Xuyên 1',
+    address: 'CQ6R+67F, Hải thanh, Nghi Sơn, Thanh Hóa, Việt Nam',
+    googleMapsLink: 'https://maps.app.goo.gl/P4tGeUXYj47bxzFeA' // Thay thế bằng link thực tế
   };
 
-  // Thông tin Tiệc Cưới (Nhà Gái)
   brideEvent = {
-    title: 'TIỆC CƯỚI (NHÀ GÁI)',
-    date: 'Chủ Nhật, 09/11/2025',
+    title: 'Lễ Thành Hôn',
+    date: 'Thứ ba, 11/11/2025',
     time: '11:00 (11 giờ trưa)',
-    locationName: 'Trung Tâm Hội Nghị DEF',
-    address: 'Số 456 Đường QRS, Quận 7, TP. Hồ Chí Minh',
-    googleMapsLink: 'https://maps.app.goo.gl/n4ryKL5s2Y1jE7h7A' // Thay thế bằng link thực tế
+    locationName: 'Nhà Hàng Du Xuyên 1',
+    address: 'CQ6R+67F, Hải thanh, Nghi Sơn, Thanh Hóa, Việt Nam',
+    googleMapsLink: 'https://maps.app.goo.gl/P4tGeUXYj47bxzFeA' // Thay thế bằng link thực tế
   };
 }
